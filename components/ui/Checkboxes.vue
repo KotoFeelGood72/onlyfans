@@ -1,5 +1,9 @@
 <template>
-  <div class="checkbox-container" @click="toggleChecked">
+  <div
+    class="checkbox-container"
+    @click="toggleChecked"
+    :class="{ 'border-none': !borderBottom }"
+  >
     <input type="checkbox" v-model="localChecked" class="checkbox-input" />
     <span class="checkbox-custom" :class="{ checked: localChecked }">
       <svg
@@ -20,9 +24,15 @@
 <script setup lang="ts">
 import { defineProps, defineEmits, ref, watch } from "vue";
 
-const props = defineProps({
-  modelValue: Boolean,
-});
+const props = withDefaults(
+  defineProps<{
+    modelValue?: Boolean;
+    borderBottom?: boolean;
+  }>(),
+  {
+    borderBottom: true,
+  }
+);
 
 const emit = defineEmits(["update:modelValue"]);
 
@@ -49,6 +59,10 @@ const toggleChecked = () => {
   border-bottom: 1px solid $light;
   cursor: pointer;
   user-select: none;
+
+  &.border-none {
+    border-bottom: none;
+  }
 }
 
 .checkbox-input {

@@ -33,14 +33,14 @@ import { ref, computed, onMounted, watch } from "vue";
 
 const props = withDefaults(
   defineProps<{
-    modelValue: string;
-    label: string;
-    error: boolean;
-    id: string;
-    description: string;
-    max: number;
-    rows: number;
-    border: boolean;
+    modelValue?: string;
+    label?: string;
+    error?: boolean;
+    id?: string;
+    description?: string;
+    max?: number;
+    rows?: number;
+    border?: boolean;
   }>(),
   {
     modelValue: "",
@@ -102,8 +102,10 @@ watch(localValue, () => {
 
 .input {
   position: relative;
-  textarea {
-    border: none !important;
+  &.border-none {
+    textarea {
+      border: none !important;
+    }
   }
   label {
     position: absolute;

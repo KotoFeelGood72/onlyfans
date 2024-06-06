@@ -108,10 +108,10 @@ const slots = defineSlots<{
 
 const props = withDefaults(
   defineProps<{
-    name: string;
-    id: string;
-    quote: string;
-    userOther: boolean;
+    name?: string;
+    id?: string;
+    quote?: string;
+    userOther?: boolean;
     profileBg?: string;
   }>(),
   {

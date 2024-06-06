@@ -9,7 +9,7 @@ import { computed } from "vue";
 
 const props = withDefaults(
   defineProps<{
-    size: "small" | "normal" | "medium" | "large";
+    size?: "small" | "normal" | "medium" | "large";
   }>(),
   {
     size: "medium",

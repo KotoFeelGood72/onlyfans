@@ -1,62 +1,61 @@
 <template>
-  <NuxtLayout>
-    <div class="main">
-      <div class="content">
-        <ProfileHead :userOther="true">
-          <template #default>
-            <ul class="profile_info">
-              <li>
-                <Icon name="bytesize:video" size="20" />
-                <span>2.6K</span>
-              </li>
-              <li>
-                <Icon name="ph:heart" />
-                <span>25.6K</span>
-              </li>
-              <li>
-                <Icon name="solar:user-heart-outline" />
-                <span>22.6M</span>
-              </li>
-            </ul>
-          </template>
-          <template #quote>
-            <div class="profile__info" :class="{ full: isMoreBtn }">
-              <div class="profile__description">
-                🎥 ❤️‍🔥 tick tick boom, baby. I’m your new favorite pinup princess and
-                deviant switch. I’ve got your spicy custom content and private video calls
-                on deck. 🤫❣️
-              </div>
-              <div class="profile__happy">
-                <Icon name="ion:gift" />
-                <span
-                  >https://www.amazon.com/hz/wishlist/ls/3CGR8UHUD7F4N?ref_=wl_share</span
-                >
-              </div>
+  <div class="main">
+    <div class="content">
+      <ProfileHead :userOther="true">
+        <template #default>
+          <ul class="profile_info">
+            <li>
+              <Icon name="bytesize:video" size="20" />
+              <span>2.6K</span>
+            </li>
+            <li>
+              <Icon name="ph:heart" />
+              <span>25.6K</span>
+            </li>
+            <li>
+              <Icon name="solar:user-heart-outline" />
+              <span>22.6M</span>
+            </li>
+          </ul>
+        </template>
+        <template #quote>
+          <div class="profile__info" :class="{ full: isMoreBtn }">
+            <div class="profile__description">
+              🎥 ❤️‍🔥 tick tick boom, baby. I’m your new favorite pinup princess and
+              deviant switch. I’ve got your spicy custom content and private video calls
+              on deck. 🤫❣️
             </div>
-            <div class="profile_more" @click="isMoreBtn = !isMoreBtn">{{ isMore }}</div>
-            <ul class="gallery_list">
-              <li v-for="(item, i) in 4" :key="'gallery-item-' + i">
-                <img
-                  src="https://thumbs.onlyfans.com/media/files/thumbs/w150b/9/91/912c7eda974c8a8a64df0452dd07b081/300x300_6acd84caaa77d8043886584ee82be075.jpg?Tag=2&Expires=1748256425&Signature=HY5W375i5XRqJrfkfkelfU6o~HbgMGYu206kCW2GhrGU2iyrZ47-aBMDfe7~BWu~vZJZ0jyORgNETU~rLmgPVOiX0FKG9gcuyO4SvJLW-g5p8m0vEo~W-z17xFQnxfmp9R1ScguVLD0yD9Hp3eF4G7qbISlRTrzEtcYSSsyrUWC27ASNHt77GYCSBJYzvW~ten1xgT~YDnKtEOtrRWVNkjRhbX8Xod21oMazOOjDi2GV1Lf2GqX9n9lHWmNicsseQA-Nw-tMXbe8UZi6v3BR2o2Js8ITT0nVwtPkuGpXlA9Y0qDO7e3ACU7yCxVbmOF5cunOnFem1EQ~YsjgUNJZPw__&Key-Pair-Id=K2WKEE5OAFHPJ8"
-                  alt=""
-                />
-                <p>Places</p>
-              </li>
-            </ul>
-          </template>
-        </ProfileHead>
-        <Divider :border="false" />
-        <SubscriptionCard @click="openModal('subscribe')" />
-        <Divider />
-        <Tabs :labels="['803 постов', '849 медиа', '1 Потоки']">
-          <template #tab-0>
-            <ListPost :posts="posts" title="Недавние" :is-compact-view="false" />
-          </template>
-          <template #tab-1>
-            <ListPost :posts="posts" title="Недавние" :is-compact-view="true" />
-          </template>
-        </Tabs>
-        <!-- <Tabs :labels="['Нет постов', 'Нет медиа']">
+            <div class="profile__happy">
+              <Icon name="ion:gift" />
+              <span
+                >https://www.amazon.com/hz/wishlist/ls/3CGR8UHUD7F4N?ref_=wl_share</span
+              >
+            </div>
+          </div>
+          <div class="profile_more" @click="isMoreBtn = !isMoreBtn">{{ isMore }}</div>
+          <ul class="gallery_list">
+            <li v-for="(item, i) in 4" :key="'gallery-item-' + i">
+              <img
+                src="https://thumbs.onlyfans.com/media/files/thumbs/w150b/9/91/912c7eda974c8a8a64df0452dd07b081/300x300_6acd84caaa77d8043886584ee82be075.jpg?Tag=2&Expires=1748256425&Signature=HY5W375i5XRqJrfkfkelfU6o~HbgMGYu206kCW2GhrGU2iyrZ47-aBMDfe7~BWu~vZJZ0jyORgNETU~rLmgPVOiX0FKG9gcuyO4SvJLW-g5p8m0vEo~W-z17xFQnxfmp9R1ScguVLD0yD9Hp3eF4G7qbISlRTrzEtcYSSsyrUWC27ASNHt77GYCSBJYzvW~ten1xgT~YDnKtEOtrRWVNkjRhbX8Xod21oMazOOjDi2GV1Lf2GqX9n9lHWmNicsseQA-Nw-tMXbe8UZi6v3BR2o2Js8ITT0nVwtPkuGpXlA9Y0qDO7e3ACU7yCxVbmOF5cunOnFem1EQ~YsjgUNJZPw__&Key-Pair-Id=K2WKEE5OAFHPJ8"
+                alt=""
+              />
+              <p>Places</p>
+            </li>
+          </ul>
+        </template>
+      </ProfileHead>
+      <Divider :border="false" />
+      <SubscriptionCard @click="openModal('subscribe')" />
+      <Divider />
+      <Tabs :labels="['803 постов', '849 медиа', '1 Потоки']">
+        <template #tab-0>
+          <ListPost :posts="posts" title="Недавние" :is-compact-view="false" />
+        </template>
+        <template #tab-1>
+          <ListPost :posts="posts" title="Недавние" :is-compact-view="true" />
+        </template>
+      </Tabs>
+      <!-- <Tabs :labels="['Нет постов', 'Нет медиа']">
           <template #tab-0>
             <EmptyImage />
           </template>
@@ -64,10 +63,9 @@
             <EmptyImage />
           </template>
         </Tabs> -->
-      </div>
-      <SubscriptionSidebar />
     </div>
-  </NuxtLayout>
+    <SubscriptionSidebar />
+  </div>
 </template>
 
 <script setup lang="ts">

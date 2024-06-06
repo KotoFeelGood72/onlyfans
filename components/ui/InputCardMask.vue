@@ -30,13 +30,13 @@ import { MaskInput } from "vue-3-mask";
 
 const props = withDefaults(
   defineProps<{
-    modelValue: string;
-    label: string;
-    error: boolean;
-    id: string;
-    description: string;
-    max: number | undefined;
-    disabled: boolean;
+    modelValue?: string;
+    label?: string;
+    error?: boolean;
+    id?: string;
+    description?: string;
+    max?: number | undefined;
+    disabled?: boolean;
   }>(),
   {
     modelValue: "",

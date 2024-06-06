@@ -20,10 +20,9 @@
 <script setup lang="ts">
 import { ref, defineProps, watch } from "vue";
 
-// Определение пропсов для табов
 const props = defineProps<{
-  labels: string[];
-  margin: string;
+  labels?: string[];
+  margin?: string;
 }>();
 
 const activeTab = ref(0);
@@ -32,11 +31,10 @@ function selectTab(index: number) {
   activeTab.value = index;
 }
 
-// Следим за изменением пропсов
 watch(
   () => props.labels,
   (newLabels) => {
-    if (activeTab.value >= newLabels.length) {
+    if (activeTab.value >= newLabels!.length) {
       activeTab.value = 0;
     }
   }
@@ -113,7 +111,7 @@ const tabLabels = ref(props.labels);
 
 .tab-content {
   padding: 20px;
-  overflow: hidden;
+  // overflow: hidden;
   max-width: 600px;
   &.margin-none {
     padding: 0;

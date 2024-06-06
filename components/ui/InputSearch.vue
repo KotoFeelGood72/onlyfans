@@ -8,8 +8,8 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    modelValue: string;
-    placeholder: string;
+    modelValue?: string;
+    placeholder?: string;
   }>(),
   {
     modelValue: "",

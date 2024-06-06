@@ -1,25 +1,23 @@
 <template>
-  <NuxtLayout>
-    <div class="main">
-      <div class="content">
-        <ContentHeader title="НОВЫЙ ПОСТ" />
-        <CreateQuiz
-          v-if="quizType === 'quiz'"
-          @update:remove="removeQuiz"
-          :victory="false"
-          title="Опрос"
-        />
-        <CreateQuiz
-          v-if="quizType === 'victory'"
-          @update:remove="removeQuiz"
-          :victory="true"
-          title="Викторина"
-        />
-        <FormTrigger @update:quiz="addedQuiz" />
-      </div>
-      <SidebarPopular />
+  <div class="main">
+    <div class="content">
+      <ContentHeader title="НОВЫЙ ПОСТ" />
+      <CreateQuiz
+        v-if="quizType === 'quiz'"
+        @update:remove="removeQuiz"
+        :victory="false"
+        title="Опрос"
+      />
+      <CreateQuiz
+        v-if="quizType === 'victory'"
+        @update:remove="removeQuiz"
+        :victory="true"
+        title="Викторина"
+      />
+      <FormTrigger @update:quiz="addedQuiz" />
     </div>
-  </NuxtLayout>
+    <SidebarPopular />
+  </div>
 </template>
 
 <script setup lang="ts">

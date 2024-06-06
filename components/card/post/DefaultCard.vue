@@ -101,8 +101,9 @@ const pollData = [
   &:before {
     position: absolute;
     bottom: 0;
-    left: -30%;
-    width: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 40px);
     border-bottom: 1px solid $light;
     content: "";
   }

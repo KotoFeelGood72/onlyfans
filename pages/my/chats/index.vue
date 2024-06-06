@@ -1,17 +1,15 @@
 <template>
-  <NuxtLayout>
-    <div class="main">
-      <SiderbarMessages />
-      <div class="empty__chat">
-        <h3>Выберите любую беседу или отправьте новое сообщение</h3>
-        <Button
-          color-sheme="primary"
-          label="Новое сообщение"
-          style="display: inline-flex"
-        />
-      </div>
+  <div class="main">
+    <SiderbarMessages />
+    <div class="empty__chat">
+      <h3>Выберите любую беседу или отправьте новое сообщение</h3>
+      <Button
+        color-sheme="primary"
+        label="Новое сообщение"
+        style="display: inline-flex"
+      />
     </div>
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup>

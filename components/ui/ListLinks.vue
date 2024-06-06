@@ -9,21 +9,25 @@
         </div>
         <Icon name="ci:chevron-right" size="20" />
       </NuxtLink>
-      <Checkboxes
-        v-for="(item, i) in checkboxes"
-        :key="'checkboxes-' + i"
-        v-model="item.isChecked"
-        >{{ item.name }}</Checkboxes
-      >
+      <div v-for="(item, i) in checkboxes" :key="'checkboxes-' + i">
+        <Checkboxes
+          v-model="item.isChecked"
+          :border-bottom="$slots['checkbox-slot-' + i] ? false : true"
+          >{{ item.name }}</Checkboxes
+        >
+        <slot :name="'checkbox-slot-' + i" />
+      </div>
     </nav>
   </div>
 </template>
 
 <script setup lang="ts">
+import { defineProps } from "vue";
 import Checkboxes from "./Checkboxes.vue";
+
 const props = defineProps<{
   label?: string;
-  menu?: any[];
+  menu?: { name: string; link: string; subname?: string }[];
   checkboxes?: { name: string; isChecked: boolean }[];
 }>();
 </script>

@@ -1,10 +1,8 @@
 <template>
-  <NuxtLayout>
-    <div class="main">
-      <ListTape />
-      <SidebarPopular />
-    </div>
-  </NuxtLayout>
+  <div class="main">
+    <ListTape />
+    <SidebarPopular />
+  </div>
 </template>
 
 <script setup>

@@ -1,15 +1,10 @@
 <template>
-  <NuxtPage />
+  <div>
+    <NuxtPage />
+  </div>
 </template>
 
-<script setup lang="ts">
-// import Divider from "~/components/ui/Divider.vue";
-// import ListLinks from "~/components/ui/ListLinks.vue";
-
-// definePageMeta({
-//   title: "Учетная запись",
-// });
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .profileSettings {

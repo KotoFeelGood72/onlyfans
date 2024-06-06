@@ -39,8 +39,10 @@
     />
     <Divider />
     <ListLinks
-      label="  Связанные настройки  "
-      :menu="[{ name: ' Конфиденциальность и безопасность ', link: '/' }]"
+      label="Связанные настройки"
+      :menu="[
+        { name: 'Конфиденциальность и безопасность', link: '/my/settings/security' },
+      ]"
     />
   </div>
 </template>

@@ -26,6 +26,7 @@
         <NavItemLink
           name="Коллекции"
           icon="material-symbols-light:collections-bookmark-outline-sharp"
+          link="/my/collections/user-lists"
         />
       </li>
       <li>
@@ -72,12 +73,23 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute, useRouter } from "vue-router";
+import { watch } from "vue";
 import AvatarCircle from "~/components/interface/AvatarCircle.vue";
 import IconButton from "~/components/ui/IconButton.vue";
 import NavItemLink from "~/components/ui/NavItemLink.vue";
 import { useModalStore } from "~/store/useModalStore";
 
 const { closeModal } = useModalStore();
+const route = useRoute();
+const router = useRouter();
+
+watch(
+  () => route.fullPath,
+  () => {
+    closeModal("user");
+  }
+);
 </script>
 
 <style scoped lang="scss">
@@ -89,7 +101,6 @@ const { closeModal } = useModalStore();
   overflow: hidden;
   max-height: 100%;
   overflow-y: auto;
-
   position: relative;
 }
 

@@ -22,8 +22,8 @@ import AvatarCircle from "../interface/AvatarCircle.vue";
 
 const props = withDefaults(
   defineProps<{
-    date: string;
-    link: string;
+    date?: string;
+    link?: string;
   }>(),
   {
     date: " 13 часов назад ",

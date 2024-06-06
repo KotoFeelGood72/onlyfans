@@ -1,37 +1,35 @@
 <template>
-  <NuxtLayout>
-    <div class="main">
-      <SiderbarMessages />
-      <div class="chat__w">
-        <ChatHead />
-        <div class="chat_list__w">
-          <div class="chat">
-            <ChatMessage
-              video="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4"
-              img=""
-              :lock="false"
-              text="Youre DEFINITELY going to want to see the rest of this set so i'll just leave this right here 😘"
-            />
-            <ChatMessage
-              :lock="false"
-              text="Youre DEFINITELY going to want to see the rest of this set so i'll just leave this right here 😘"
-            />
-            <ChatMessage
-              v-for="item in 2"
-              :key="'chat-item-message-' + item"
-              text="Youre DEFINITELY going to want to see the rest of this set so i'll just leave this right here 😘"
-            />
-            <ChatMessage
-              img=""
-              :lock="false"
-              text="Youre DEFINITELY going to want to see the rest of this set so i'll just leave this right here 😘"
-            />
-          </div>
+  <div class="main">
+    <SiderbarMessages />
+    <div class="chat__w">
+      <ChatHead />
+      <div class="chat_list__w">
+        <div class="chat">
+          <ChatMessage
+            video="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4"
+            img=""
+            :lock="false"
+            text="Youre DEFINITELY going to want to see the rest of this set so i'll just leave this right here 😘"
+          />
+          <ChatMessage
+            :lock="false"
+            text="Youre DEFINITELY going to want to see the rest of this set so i'll just leave this right here 😘"
+          />
+          <ChatMessage
+            v-for="item in 2"
+            :key="'chat-item-message-' + item"
+            text="Youre DEFINITELY going to want to see the rest of this set so i'll just leave this right here 😘"
+          />
+          <ChatMessage
+            img=""
+            :lock="false"
+            text="Youre DEFINITELY going to want to see the rest of this set so i'll just leave this right here 😘"
+          />
         </div>
-        <ChatInput />
       </div>
+      <ChatInput />
     </div>
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup>

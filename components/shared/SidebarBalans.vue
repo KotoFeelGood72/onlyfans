@@ -18,8 +18,6 @@
             name="Сделать кошелек основным методом для ребиллей"
             :borderTop="false"
           />
-          <!-- style="padding: 0 0 16px 0" -->
-          <!-- :borderBottom="false" -->
         </div>
       </div>
       <div class="cash__bottom">

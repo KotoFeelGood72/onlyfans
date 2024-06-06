@@ -1,15 +1,17 @@
 <template>
-  <NuxtLayout name="notifications">
+  <div class="childmain">
     <div class="content">
       <ContentHeader :back="true" :settings="true" title="УВЕДОМЛЕНИЯ" />
       <TabNavigation :nav="nav" />
     </div>
-  </NuxtLayout>
+    <SidebarPopular />
+  </div>
 </template>
 
 <script setup lang="ts">
 import TabNavigation from "~/components/ui/TabNavigation.vue";
 import ContentHeader from "~/components/ui/ContentHeader.vue";
+import SidebarPopular from "~/components/shared/SidebarPopular.vue";
 const nav = ref<any>([
   { name: "Все", link: "/my/notifications" },
   { name: "Тэги", link: "/my/notifications/tags" },

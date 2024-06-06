@@ -5,7 +5,10 @@
       label="Предпочтения"
       :menu="[
         { name: 'Push-уведомления', link: '/my/settings/notifications/webpush' },
-        { name: 'Уведомления электронной почты', link: '/' },
+        {
+          name: 'Уведомления электронной почты',
+          link: '/my/settings/notifications/email',
+        },
         { name: 'Уведомления на сайте', link: '/my/settings/notifications/site' },
         { name: 'Уведомления о тосте', link: '/my/settings/notifications/toast' },
       ]"

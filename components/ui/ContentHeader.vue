@@ -15,6 +15,15 @@
     <div class="content_header__support" v-if="banking">
       <Icon name="material-symbols:contact-support-outline" size="25" />
     </div>
+    <div class="content_header__added" v-if="added">
+      <IconButton iconName="ri:search-line" iconSize="20" name="Поиск" v-if="search" />
+      <IconButton
+        iconName="ph:plus-bold"
+        iconSize="20"
+        name="Создать новый список"
+        v-if="added"
+      />
+    </div>
     <div class="content_header__payments" v-if="payments">
       <div class="check_card">Проверить</div>
       <div class="payments__added">
@@ -37,12 +46,14 @@ import IconButton from "./IconButton.vue";
 import { useRoute } from "vue-router";
 const props = withDefaults(
   defineProps<{
-    title: string;
-    back: boolean;
-    other: boolean;
-    settings: boolean;
-    banking: boolean;
-    payments: boolean;
+    title?: string;
+    back?: boolean;
+    other?: boolean;
+    settings?: boolean;
+    banking?: boolean;
+    payments?: boolean;
+    search?: boolean;
+    added?: boolean;
   }>(),
   {
     title: "Заголовок страницы",
@@ -51,6 +62,8 @@ const props = withDefaults(
     settings: false,
     banking: false,
     payments: false,
+    search: false,
+    added: false,
   }
 );
 
@@ -126,5 +139,9 @@ const route = useRoute();
       background-color: $accent;
     }
   }
+}
+
+.content_header__added {
+  @include flex-end;
 }
 </style>

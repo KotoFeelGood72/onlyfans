@@ -17,8 +17,8 @@ const props = withDefaults(
     label: string;
     icon?: string;
     iconSize?: string;
-    iconStatic: boolean;
-    colorSheme: "primary" | "secondary" | "default";
+    iconStatic?: boolean;
+    colorSheme?: "primary" | "secondary" | "default";
   }>(),
   {
     label: "Новый пост",

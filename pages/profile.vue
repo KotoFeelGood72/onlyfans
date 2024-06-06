@@ -1,22 +1,20 @@
 <template>
-  <NuxtLayout>
-    <div class="main">
-      <div class="content">
-        <ProfileHead />
-        <div class="border-block">
-          <Tabs :labels="['Нет постов', 'Нет медиа']">
-            <template #tab-0>
-              <EmptyImage />
-            </template>
-            <template #tab-1>
-              <EmptyImage />
-            </template>
-          </Tabs>
-        </div>
+  <div class="main">
+    <div class="content">
+      <ProfileHead />
+      <div class="border-block">
+        <Tabs :labels="['Нет постов', 'Нет медиа']">
+          <template #tab-0>
+            <EmptyImage />
+          </template>
+          <template #tab-1>
+            <EmptyImage />
+          </template>
+        </Tabs>
       </div>
-      <SidebarProfile />
     </div>
-  </NuxtLayout>
+    <SidebarProfile />
+  </div>
 </template>
 
 <script setup lang="ts">

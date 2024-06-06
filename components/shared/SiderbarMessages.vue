@@ -12,19 +12,19 @@
     </div>
     <div class="sidebar_messages__prehead">
       <p>СНАЧАЛА НОВЫЕ</p>
-      <div class="sidebar_sortering__btn">
+      <!-- <div class="sidebar_sortering__btn">
         <IconButton
           name="Больше"
           iconName="material-symbols:sort"
           iconSize="22"
           iconColor="gray"
-          @click="isMore = !isMore"
+          @click.stop="toggleIsMore"
         />
-        <MoreChatTooltipe :isMore="isMore" @update:isMore="isMore = !isMore" />
-      </div>
+      </div> -->
+      <MoreChatTooltipe />
     </div>
     <ul class="chat_filtered">
-      <li v-for="(item, i) in sorterring" :key="'sortering-item-' + i">
+      <li v-for="(item, i) in sortering" :key="'sortering-item-' + i">
         {{ item }}
       </li>
       <li class="tab_edit_btn">
@@ -41,9 +41,18 @@
 import IconButton from "./../ui/IconButton.vue";
 import ChatCard from "../card/ChatCard.vue";
 import MoreChatTooltipe from "../tooltipe/MoreChatTooltipe.vue";
+import { ref } from "vue";
 
-const sorterring = ref<any>(["Все", "Следующий"]);
+const sortering = ref<any>(["Все", "Следующий"]);
 const isMore = ref<boolean>(false);
+
+const toggleIsMore = () => {
+  isMore.value = !isMore.value;
+};
+
+const closeTooltip = () => {
+  isMore.value = false;
+};
 </script>
 
 <style scoped lang="scss">

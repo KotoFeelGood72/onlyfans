@@ -1,39 +1,37 @@
 <template>
-  <NuxtLayout>
-    <div class="main">
-      <div class="content">
-        <ContentHeader title="Банковские" :banking="true" />
-        <Alert iconName="mingcute:alert-line" type="danger">
-          <template v-slot:title>Пожалуйста, заполните следующие поля:</template>
-          <template v-slot:content
-            ><div>- изображение аватара</div>
-            <div>- изображение заголовка</div>
-            <div>- обо мне информация</div></template
-          >
-        </Alert>
-        <div class="banking__info">
-          <div class="banking__bg">
-            <img src="../../assets/img/default_header_image.png" alt="" />
-            <div class="banking__upload"><Icon name="mdi-light:camera" size="25" /></div>
-          </div>
-          <div class="avatar__banking">
-            <AvatarCircle size="large" />
-          </div>
+  <div class="main">
+    <div class="content">
+      <ContentHeader title="Банковские" :banking="true" />
+      <Alert iconName="mingcute:alert-line" type="danger">
+        <template v-slot:title>Пожалуйста, заполните следующие поля:</template>
+        <template v-slot:content
+          ><div>- изображение аватара</div>
+          <div>- изображение заголовка</div>
+          <div>- обо мне информация</div></template
+        >
+      </Alert>
+      <div class="banking__info">
+        <div class="banking__bg">
+          <img src="../../assets/img/default_header_image.png" alt="" />
+          <div class="banking__upload"><Icon name="mdi-light:camera" size="25" /></div>
         </div>
-        <div class="banking__action">
-          <Textareas label="Био" :max="1000" id="profile-setting-bio" />
-          <div class="banking__save">
-            <Button
-              label="Сохранить изменения"
-              colorSheme="primary"
-              style="padding: 10px 20px"
-            />
-          </div>
+        <div class="avatar__banking">
+          <AvatarCircle size="large" />
         </div>
       </div>
-      <SidebarBank />
+      <div class="banking__action">
+        <Textareas label="Био" :max="1000" id="profile-setting-bio" />
+        <div class="banking__save">
+          <Button
+            label="Сохранить изменения"
+            colorSheme="primary"
+            style="padding: 10px 20px"
+          />
+        </div>
+      </div>
     </div>
-  </NuxtLayout>
+    <SidebarBank />
+  </div>
 </template>
 
 <script setup lang="ts">

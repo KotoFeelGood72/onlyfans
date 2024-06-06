@@ -11,12 +11,7 @@
           name="Полный вид"
           @click="toggleView"
         />
-        <IconButton
-          iconName="iconamoon:sorting-left-fill"
-          iconSize="24"
-          iconColor="gray"
-          name="Сортировать"
-        />
+        <MoreChatTooltipe />
       </div>
     </div>
     <div class="sort-post">
@@ -39,6 +34,7 @@ import CompactCard from "../card/post/CompactCard.vue";
 import DefaultCard from "../card/post/DefaultCard.vue";
 import IconButton from "../ui/IconButton.vue";
 import SorteringButtons from "../ui/SorteringButtons.vue";
+import MoreChatTooltipe from "../tooltipe/MoreChatTooltipe.vue";
 
 const props = defineProps<{
   posts: any[];
@@ -46,7 +42,6 @@ const props = defineProps<{
   isCompactView: boolean;
 }>();
 
-// Local state for view type, initialized from props
 const isViewCompact = ref(props.isCompactView);
 
 const sort = ref<any>([

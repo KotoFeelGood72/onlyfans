@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout>
+  <div>
     <div class="content">
       <ContentHeader title="ПЛАТЕЖНЫЕ КАРТЫ" :payments="true" />
       <Tabs :labels="['Ваши карты', 'Платежи']" margin="none">
@@ -8,7 +8,7 @@
       </Tabs>
     </div>
     <SidebarBalans />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">

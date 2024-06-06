@@ -7,7 +7,7 @@
       software 💻 <a href="#">onlyfans.com/aliciawaldner</a>
       <a href="#">onlyfans.com/oftv</a>
     </div>
-    <CardGallery video-src="https://youtu.be/IRzJrT43sDg?si=2gK__NsuxudO4A5o" />
+    <CardGallery video-src="https://youtu.be/RCmjd4b2OAw?si=P8KYq6J7zxMCQgL-" />
     <CardBottom />
     <div class="count">172 любит</div>
   </div>
@@ -19,7 +19,7 @@ import CardGallery from "../ui/CardGallery.vue";
 import CardBottom from "../ui/CardBottom.vue";
 
 const props = defineProps<{
-  link: string;
+  link?: string;
 }>();
 </script>
 

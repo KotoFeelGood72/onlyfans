@@ -1,8 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  // devtools: { enabled: true },
   modules: ['nuxt-icon', 'floating-vue/nuxt', 'nuxt-swiper', '@pinia/nuxt', '@nuxtjs/svg-sprite'],
   plugins: ['~/plugins/head.client.ts', { src: '~/plugins/video.js', mode: 'client' }],
+  
   vite: {
     css: {
       preprocessorOptions: {
@@ -14,5 +15,8 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
 })

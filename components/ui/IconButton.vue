@@ -7,11 +7,11 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    name: string;
-    iconSize: string;
-    iconName: string;
-    iconColor: string;
-    positionName: "top" | "bottom";
+    name?: string;
+    iconSize?: string;
+    iconName?: string;
+    iconColor?: string;
+    positionName?: "top" | "bottom";
   }>(),
   {
     name: "",

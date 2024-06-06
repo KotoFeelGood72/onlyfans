@@ -26,14 +26,14 @@ import { ref, computed } from "vue";
 
 const props = withDefaults(
   defineProps<{
-    modelValue: string;
-    label: string;
-    error: boolean;
-    id: string;
-    type: "text" | "tel" | "email";
-    description: string;
-    max: number | undefined;
-    disabled: boolean;
+    modelValue?: string;
+    label?: string;
+    error?: boolean;
+    id?: string;
+    type?: "text" | "tel" | "email";
+    description?: string;
+    max?: number | undefined;
+    disabled?: boolean;
   }>(),
   {
     modelValue: "",

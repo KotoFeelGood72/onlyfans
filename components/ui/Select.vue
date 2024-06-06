@@ -3,12 +3,16 @@
     <div class="select-label">{{ label }}</div>
     <div class="selected" @click="toggleDropdown">
       <span v-if="selectedItem">
-        <svg-icon :name="selectedItem.icon" class="country-icon" />
+        <svg-icon
+          :name="selectedItem.icon"
+          v-if="selectedItem.icon"
+          class="country-icon"
+        />
         {{ selectedItem.label }}
       </span>
       <span v-else>
-        <svg-icon :name="items[0].icon" class="country-icon" />
-        {{ items[0].label }}
+        <svg-icon :name="defaultItem.icon" class="country-icon" />
+        {{ defaultItem.label }}
       </span>
       <div class="arrow_expanded" :class="{ isOpen: isOpen }">
         <Icon name="heroicons:chevron-down" size="20" />
@@ -21,7 +25,7 @@
         @click="selectItem(item)"
         class="dropdown-item"
       >
-        <div class="dropdown_item__icon">
+        <div class="dropdown_item__icon" v-if="item.icon">
           <svg-icon :name="item.icon" />
         </div>
         {{ item.label }}
@@ -34,15 +38,17 @@
 import { ref, defineProps, defineEmits, watch, onMounted, onBeforeUnmount } from "vue";
 
 const props = defineProps<{
-  items: any[];
-  modelValue: any;
-  label: string;
+  items?: any[];
+  modelValue?: any;
+  label?: string;
 }>();
 
 const emit = defineEmits(["update:modelValue"]);
 
 const isOpen = ref(false);
-const selectedItem = ref(props.modelValue || props.items[0] || null);
+const items = ref(props.items || []);
+const defaultItem = { icon: "", label: "Select an option", value: "" };
+const selectedItem = ref(props.modelValue || items.value[0] || defaultItem);
 const selectWrapper = ref<HTMLElement | null>(null);
 
 const toggleDropdown = () => {
@@ -58,7 +64,18 @@ const selectItem = (item: { icon: string; value: string; label: string }) => {
 watch(
   () => props.modelValue,
   (newValue) => {
-    selectedItem.value = newValue || props.items[0];
+    selectedItem.value = newValue || items.value[0] || defaultItem;
+  },
+  { immediate: true }
+);
+
+watch(
+  () => props.items,
+  (newItems) => {
+    items.value = newItems || [];
+    if (!selectedItem.value || !items.value.includes(selectedItem.value)) {
+      selectedItem.value = items.value[0] || defaultItem;
+    }
   },
   { immediate: true }
 );
@@ -123,7 +140,6 @@ onBeforeUnmount(() => {
   overflow-y: auto;
   z-index: 1000;
 
-  /* Убираем скролл бар, но оставляем прокрутку */
   &::-webkit-scrollbar {
     width: 0;
     height: 0;

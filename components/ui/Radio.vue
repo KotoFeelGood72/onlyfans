@@ -20,8 +20,8 @@
 import { ref, defineProps, defineEmits, watch } from "vue";
 
 const props = defineProps<{
-  modelValue: boolean;
-  id: string;
+  modelValue?: boolean;
+  id?: string;
 }>();
 
 const emit = defineEmits(["update:modelValue"]);

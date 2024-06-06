@@ -4,7 +4,11 @@
     <FormTrigger />
     <PostNotificationCard />
     <div class="post-list">
-      <TapeCard v-for="item in 12" :key="'post-item-' + item" :link="'onlyfans'" />
+      <TapeCard
+        v-for="item in 12"
+        :key="'post-item-tape-' + item"
+        :link="'onlyfans-' + item"
+      />
     </div>
   </div>
 </template>

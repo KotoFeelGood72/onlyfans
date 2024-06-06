@@ -17,14 +17,14 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, computed } from 'vue';
+import { defineProps, defineEmits, computed } from "vue";
 
 const props = defineProps<{
-  id: string;
-  name: string;
-  value: string;
-  modelValue: string;
-  label: string;
+  id?: string;
+  name?: string;
+  value?: string;
+  modelValue?: string;
+  label?: string;
 }>();
 
 const emit = defineEmits(["update:modelValue"]);
@@ -67,19 +67,16 @@ const updateValue = (event: Event) => {
   transition: background-color 0.3s;
 }
 
-
-
 .radio-input:checked + .radio-label .custom-radio {
   border-color: $blue;
   &:before {
-
     content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     width: 11px;
     height: 11px;
-    background-color:$blue;
+    background-color: $blue;
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }

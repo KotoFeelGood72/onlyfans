@@ -5,9 +5,6 @@
 </template>
 
 <script setup lang="ts">
-// import Divider from "~/components/ui/Divider.vue";
-// import ListLinks from "~/components/ui/ListLinks.vue";
-
 definePageMeta({
   title: "Уведомления",
 });

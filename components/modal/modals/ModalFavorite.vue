@@ -70,6 +70,7 @@ import AvatarCircle from "~/components/interface/AvatarCircle.vue";
 
 .save__body {
   padding: 10px;
+  min-height: 288px;
 }
 
 .save__item {

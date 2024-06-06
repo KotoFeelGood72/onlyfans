@@ -5,7 +5,7 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    border: boolean;
+    border?: boolean;
   }>(),
   {
     border: true,

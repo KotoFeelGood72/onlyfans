@@ -1,6 +1,7 @@
 <template>
   <div class="card_gallery">
     <div class="video">
+    <ClientOnly>
       <vue-plyr>
         <video controls playsinline>
           <source
@@ -9,6 +10,7 @@
           />
         </video>
       </vue-plyr>
+    </ClientOnly>
     </div>
     <div class="card_gallery_images">
       <CardGalleryImg

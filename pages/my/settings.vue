@@ -1,18 +1,16 @@
 <template>
-  <NuxtLayout>
-    <div class="main">
-      <SiderbarProfileSettings />
-      <div class="content">
-        <div class="content_head">
-          <h2>{{ route.meta.title }}</h2>
-          <div class="content_save" v-if="route.meta.title === 'Редактировать профиль'">
-            <button type="button">Сохранить</button>
-          </div>
+  <div class="main">
+    <SiderbarProfileSettings />
+    <div class="content">
+      <div class="content_head">
+        <h2>{{ route.meta.title }}</h2>
+        <div class="content_save" v-if="route.meta.title === 'Редактировать профиль'">
+          <button type="button">Сохранить</button>
         </div>
-        <NuxtPage />
       </div>
+      <NuxtPage />
     </div>
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">

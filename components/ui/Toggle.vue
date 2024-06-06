@@ -20,10 +20,10 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    name: string;
-    checked: boolean;
-    borderTop: boolean;
-    borderBottom: boolean;
+    name?: string;
+    checked?: boolean;
+    borderTop?: boolean;
+    borderBottom?: boolean;
   }>(),
   {
     name: "Toggle item",
